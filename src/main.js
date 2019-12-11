@@ -82,7 +82,7 @@ function init() {
             count++
             $('.count').html(count)
 
-            if (count >= 1) {
+            if (count >= 6) {
                 // default 6
                 clearInterval(intervalId)
                 $('.count').removeClass('show')
