@@ -1,6 +1,8 @@
 let firebase = require('firebase')
 require('firebase/database')
 require('firebase/storage')
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 
 $(document).ready(function() {
     const config = {
@@ -72,17 +74,17 @@ function init() {
     }
 
     $('.snap').on('click', function() {
-        let count = 1
+        let count = 5
         $('.count').html(count)
 
         $('.count').addClass('show')
         $('.snap').addClass('hide')
 
         intervalId = setInterval(function() {
-            count++
+            count--
             $('.count').html(count)
 
-            if (count >= 6) {
+            if (count == 0) {
                 // default 6
                 clearInterval(intervalId)
                 $('.count').removeClass('show')
