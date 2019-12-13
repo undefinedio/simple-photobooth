@@ -101,9 +101,11 @@ function init() {
   function snap() {
     context.drawImage(video, 0, 0, video.width, video.height)
     $('.js-pic').addClass('show')
-    $.get('https://192.168.68.144:1334/off').then(light => {
-      console.log(light)
-    });
+    setTimeout(_ => {
+      $.get('https://192.168.68.144:1334/off').then(light => {
+        console.log(light)
+      });
+    }, 1000);
   }
 
   $('.js-retry').on('click', function () {
