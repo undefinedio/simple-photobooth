@@ -76,6 +76,9 @@ function init() {
   }
 
   $('.snap').on('click', function () {
+    $.get('http://192.168.68.144:1334/on').then(light => {
+      console.log(light)
+    });
     let count = 5
     $('.count').html(count)
 
@@ -98,6 +101,9 @@ function init() {
   function snap() {
     context.drawImage(video, 0, 0, video.width, video.height)
     $('.js-pic').addClass('show')
+    $.get('http://192.168.68.144:1334/off').then(light => {
+      console.log(light)
+    });
   }
 
   $('.js-retry').on('click', function () {
