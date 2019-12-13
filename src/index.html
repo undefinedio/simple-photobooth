@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Photobooth</title>
-	<link rel="stylesheet" href="style.scss">
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="https://apis.google.com/js/api.js"></script>
-	<script src="main.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Photobooth</title>
+  <link rel="stylesheet" href="style.scss">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+          integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="main.js"></script>
 
 <body>
-    <video id="video" class="video" width="640" height="480" autoplay=""></video>
-	<button id="snap" class="snap">Take Photo</button>
-	<div class="pic-wrapper js-pic">
-		<canvas id="canvas" class="pic" width="640" height="480"></canvas>
-	</div>
+<img alt="" class="overlay">
+<video id="video" class="video" width="640" height="480" autoplay=""></video>
+<button id="snap" class="snap">
+  <img src="camera.png" alt=" " class="camera-icon">
+  Take Photo
+</button>
+<div class="pic-wrapper js-pic">
+  <canvas id="canvas" class="pic" width="640" height="480"></canvas>
+</div>
 
-	<div class="count">1</div>
+<div class="count">1</div>
 
-	<div class="done js-pic">
-		<button class="js-retry left">Retry</button>
-		<button class="js-done right">Done</button>
-	</div>
+<div class="done js-pic">
+  <button class="js-retry left">Retry</button>
+  <button class="js-done right">Done</button>
+</div>
 </body>
 </html>

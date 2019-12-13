@@ -1,104 +1,152 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body,
-html{
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background: black;
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background: black;
 }
 
 .video {
-    z-index: 10;
+  z-index: 10;
+}
+
+.camera-icon {
+  display: block;
+  position: relative;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.overlay {
+  margin: auto;
+  position: relative;
+  height: 100vh;
+  display: block;
+  z-index: 999;
+  pointer-events: none;
 }
 
 .snap,
 .count {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .count {
-    color: white;
-    font-size: 200px;
+  color: white;
+  font-size: 60vh;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-family: Impact, sans-serif;
 
-    &.show {
-        z-index: 15;
-    }
+  &.show {
+    z-index: 15;
+  }
 }
 
 .snap {
-    z-index: 15;
+  z-index: 15;
+  border-radius: 10px;
+  box-shadow: 0px 10px 0px #000;
+  border-color: #000;
+  border-width: 5px;
+  animation-name: bounce;
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
 
-    &.hide {
-        z-index: 0;
-    }
+  &:active {
+    outline: 0;
+    box-shadow: 0 0 0 #000;
+  }
+
+  &.hide {
+    z-index: 0;
+  }
 }
 
 button {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .done {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 
-    button{
-        height:100vh;
-        position: fixed;
-        top: 0;
-        border: none;
-        width: 15vw;
-        color:white;
-        font-size: 20px;
-    }
+  button {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    border: none;
+    width: 15vw;
+    color: white;
+    font-size: 20px;
+  }
 
-    .left{
-        background: #FF6347;
-        left: 0;
-    }
+  .left {
+    background: #FF6347;
+    left: 0;
+  }
 
-    .right{
-        background: #90EE90;
-        right: 0;
-    }
+  .right {
+    background: #90EE90;
+    right: 0;
+  }
 
-    &.show {
-        z-index: 20;
-        display: block;
-    }
+  &.show {
+    z-index: 20;
+    display: block;
+  }
 }
 
 .video,
 .pic-wrapper {
-    height: 100vh;
-    width: 100vw;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .pic-wrapper {
-    display: none;
+  display: none;
 
-    &.show {
-        display: block;
-        z-index: 20;
-    }
+  &.show {
+    display: block;
+    z-index: 20;
+  }
 }
 
 .pic {
-    margin: auto;
-    height: 100%;
+  margin: auto;
+  height: 100%;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+    box-shadow: 0px 5px 0px #000;
+  }
+  50% {
+    box-shadow: 0px 10px 0px #000;
+    transform: translate(-50%, -5px);
+  }
 }
